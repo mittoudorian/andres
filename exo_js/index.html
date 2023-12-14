@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <input type="number" placeHolder="chiffre1" id="chiffre1">
+        <input type="number" placeHolder="chiffre2" id="chiffre2">
+        <input type="number" placeHolder="resultat" id="resultat">
+        <input type="button" value="add" onclick="add()"></input>
+        <input type="button" value="sous" onclick="sous()"></input>
+        <input type="button" value="mul" onclick="mul()"></input>
+        <input type="button" value="compteur" onclick="count()"></input>
+    </form>
+    <script>
+        let res = document.getElementById("resultat").value;
+        function add(){
+            let chiffre1 = document.getElementById("chiffre1").value;
+            let chiffre2 = document.getElementById("chiffre2").value;
+            res = document.getElementById("resultat").value = parseInt(chiffre1)+parseInt(chiffre2);
+        }
+
+        function sous(){
+            let chiffre1 = document.getElementById("chiffre1").value;
+            let chiffre2 = document.getElementById("chiffre2").value;
+
+            if(parseInt(chiffre1) < parseInt(chiffre2)){
+                res = document.getElementById("resultat").value = parseInt(chiffre2) - parseInt(chiffre1);
+            }
+            else{
+                res = document.getElementById("resultat").value = parseInt(chiffre1) - parseInt(chiffre2);
+            }
+        }
+
+        function mul(){
+            let chiffre1 = document.getElementById("chiffre1").value;
+            let chiffre2 = document.getElementById("chiffre2").value;
+            res = document.getElementById("resultat").value = parseInt(chiffre1)*parseInt(chiffre2);
+        }
+
+        function count(){
+            let chiffre1 = document.getElementById("chiffre1").value;
+            for(let i = 0; parseInt(chiffre1) >= 0; i++){
+                res = document.getElementById("resultat").value += chiffre1--;
+            }
+        }
+    </script>
+</body>
+</html>
